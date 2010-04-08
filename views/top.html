@@ -1,0 +1,128 @@
+<html>
+    <head><title>Hatebu::Tracker - はてブトラッカー はてブのお気に入りを追っかけよう</title>
+
+<style type="text/css">
+
+body {
+  color: #606060;
+  margin: 25px 50px 25px 50px;
+}
+h1 {
+  padding: 15px 0px;
+}
+h2 {
+  border-top: 4px solid #d0d0d0;
+  padding: 10px 0px;
+}
+
+div#logo-area {
+  margin: 60px;
+}
+
+.logo {
+  border: 0;
+}
+
+img#icon {
+  margin: 16px;
+}
+
+div.section {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+div#entrance a{
+  display: block;
+  text-align: center;
+  margin: 30px;
+  padding: 20px;
+  background-color: skyBlue;
+  -moz-border-radius: 8px 8px 8px 8px;
+}
+
+div#footer {
+  float:right;
+}
+
+a img {
+  border: 0;
+}
+
+</style>
+
+    </head>
+    <body>
+      <div id="logo-area">
+        <a id="logo" href="/"><img id="icon" class="logo" src="/images/footprint.png" alt="Site icon"/><img id="logo" class="logo" src="/images/hatetra.png" alt="Hatebu::Tracker" title="はてブのお気に入りを追っかけよう"/>
+        </a>
+      </div>
+      <h2>Hatebu::Trackerとは</h2>
+        <div class="section">
+            <p>
+           はてなWebHookの「お気に入り」ユーザによるブックマーク通知を受け取り、Notify.io へ中継するWebサービスです。
+           このサービスの利用者は、Notify.io の通知ルーティングサービスを利用して、はてなWebHookの通知を（おそらく）ほぼリアルタイムにデスクトップで受信することができます。
+           </p>
+           <p>
+           また、それらの通知は Notify.io が提供するアウトレット（Outlet）を追加することで、iPhone や Jabberクライアント、email クラアント で受信することもできます。
+           </p>
+           <div id="entrance"><a href="{{ link_to_login }}">WebHook用URLを作成(Googleアカウントでログイン)</a></div>
+           <p>
+            サービスを利用するためには、以下のリンクをクリックして、はてなWebHookの通知先として登録するためのURLを作成してください。
+           </p>
+        </div>
+      <h2>関連エントリ</h2>
+          <div class="section">
+          <ul>
+            <li><span class="hatena-bookmark-title"><a href="http://d.hatena.ne.jp/snaka72/20091227/1261887975">GAEではてブのお気に入りユーザーが今何をブクマしているのかリアルタイムに追跡するためのサービス作ってみた - 今日もスミマセン。</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/d.hatena.ne.jp/snaka72/20091227/1261887975"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/snaka72/20091227/1261887975" alt="GAEではてブのお気に入りユーザーが今何をブクマしているのかリアルタイムに追跡するためのサービス作ってみた - 今日もスミマセン。" title="GAEではてブのお気に入りユーザーが今何をブクマしているのかリアルタイムに追跡するためのサービス作ってみた - 今日もスミマセン。"></a></span></li>
+            <li><span class="hatena-bookmark-title"><a href="http://d.hatena.ne.jp/snaka72/20091231/1262284621">Notify.ioからの通知をリアルタイムに受け取るクラアント作った（Windows版） - 今日もスミマセン。</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/d.hatena.ne.jp/snaka72/20091231/1262284621"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/snaka72/20091231/1262284621" alt="Notify.ioからの通知をリアルタイムに受け取るクラアント作った（Windows版） - 今日もスミマセン。" title="Notify.ioからの通知をリアルタイムに受け取るクラアント作った（Windows版） - 今日もスミマセン。"></a></span></li>
+          </ul>
+        </div>
+        <h2>Change log</h2>
+        <div class="section">
+          <dl>
+            <dt>2010.03.24</dt>
+            <dd>
+              <ul> <li>ちょっとデザインいじってみた。</li> </ul>
+            </dd>
+            <dt>2010.01.01</dt>
+            <dd>
+              <ul> <li>コメント受け付けられるようにDisqus導入してみた。</li> </ul>
+            </dd>
+            <dt>2009.12.30</dt>
+            <dd>
+              <ul> <li>「通知のテスト」ボタンを追加しました。</li> </ul>
+            </dd>
+            <dt>2009.12.27</dt>
+            <dd>
+              <ul> <li>とりあえず公開</li> </ul>
+            </dd>
+          </dl>
+        </div>
+        <div id="comments">
+          <h2>コメント</h2>
+          <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/hatetra/embed.js"></script><noscript><a href="http://disqus.com/forums/hatetra/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+
+        <div id="footer">
+          <img src="http://code.google.com/appengine/images/appengine-noborder-120x30.gif"
+alt="Powered by Google App Engine" />
+        </div>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+  if(links[i].href.indexOf('#disqus_thread') >= 0) {
+    query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+  }
+  }
+  document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/hatetra/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+    </body>
+</html>
+

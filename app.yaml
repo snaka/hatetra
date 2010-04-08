@@ -1,0 +1,14 @@
+application: hatetra
+version: 20100408
+runtime: python
+api_version: 1
+
+handlers:
+- url: /images
+  static_dir: images
+
+- url: /register
+  script: main.py
+
+- url: .*
+  script: main.py

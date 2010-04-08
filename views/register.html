@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Hatebu::Tracker - はてブトラッカー</title>
+    <style type="text/css">
+body {
+  color: #606060;
+  margin: 25px 50px 25px 50px;
+}
+h1 {
+  padding: 15px;
+}
+h2 {
+  border-top: 4px solid #d0d0d0;
+  padding: 10px 0px;
+}
+
+div#logo-area {
+  margin: 60px;
+}
+
+.logo {
+  border: 0;
+}
+
+img#icon {
+  margin: 16px;
+}
+
+div.section {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+a img {
+  border: 0;
+}
+
+div#footer {
+  float:right;
+}
+  </style>
+  </head>
+<body>
+  <div id="logo-area">
+    <a id="logo" href="/"><img id="icon" class="logo" src="/images/footprint.png" alt="Site icon"/><img id="logo" class="logo" src="/images/hatetra.png" alt="Hatebu::Tracker" title="はてブのお気に入りを追っかけよう"/>
+    </a>
+  </div>
+  <h2>WebHook通知先URL及び認証key</h2>
+  <div class="section">
+    <span id="user-name">{{ user_name }}</span> さんの<br/>
+    WebHook用URLは: <code id="hook-url">http://hatetra.appspot.com/{{ user_hash }}</code> です<br/>
+    認証keyは: <code id="key">{{ notify_key }}</code> です
+
+    <p>
+    以下のエントリを参考に、Notify.ioの設定と WebHook の設定を行なってください。
+    <ul>
+      <li><span class="hatena-bookmark-title"><a href="http://d.hatena.ne.jp/snaka72/20091227/1261887975">GAEではてブのお気に入りユーザーが今何をブクマしているのかリアルタイムに追跡するためのサービス作ってみた - 今日もスミマセン。</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/d.hatena.ne.jp/snaka72/20091227/1261887975"><img src="http://b.hatena.ne.jp/entry/image/http://d.hatena.ne.jp/snaka72/20091227/1261887975" alt="GAEではてブのお気に入りユーザーが今何をブクマしているのかリアルタイムに追跡するためのサービス作ってみた - 今日もスミマセン。" title="GAEではてブのお気に入りユーザーが今何をブクマしているのかリアルタイムに追跡するためのサービス作ってみた - 今日もスミマセン。"></a></span></li>
+    </ul>
+    </p>
+  </div>
+ <!-- test notifycation" -->
+  <h2>通知のテスト</h2>
+  <div class="section">
+    <p>
+    上記のとおり設定を行い、以下のボタンをクリックすると、Notify.io で設定したアウトレットに対して通知が行なわれます。 
+    </p>
+    <form method="post" action="/{{ user_hash }}">
+        <input type="hidden" name="title" value="今日もスミマセン。"/>
+        <input type="hidden" name="username" value="snaka72"/>
+        <input type="hidden" name="comment" value="テストです"/>
+        <input type="hidden" name="status" value="favorite:add"/>
+        <input type="hidden" name="key" value="{{ notify_key }}"/>
+        <input type="hidden" name="url" value="http://d.hatena.ne.jp/snaka72/"/>
+        <input type="submit" value="通知のテスト"/>
+    </form>
+    <p>
+    以下のように通知が届けば設定完了。あとは「お気に入り」ユーザがブクマするのをじっと待ちましょう。
+    </p>
+    <img src="http://gyazo.com/1d6f145dcedca690d9dbd09a31cc4a99.png"/>
+
+  </div>
+  <h2>認証Keyの再発行</h2>
+  <div class="section">
+    以下のボタンをクリックすると、新しい認証Keyを再発行します。
+    第３者に認証Keyが知れてしまった場合などにお使いください。
+  </div>
+  <form method="post" action="/register">
+    <input type="submit" value="認証keyを再発行"/>
+  </form>
+   <a href="{{ link_to_logout }}">ログアウト</a>
+  <div id="footer">
+    <img src="http://code.google.com/appengine/images/appengine-noborder-120x30.gif" alt="Powered by Google App Engine" />
+  </div>
+</body>
+</html>
+
