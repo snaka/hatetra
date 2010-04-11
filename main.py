@@ -107,7 +107,8 @@ def notify(user_hash, username, title, comment, url):
     logging.debug("notify url: %s" % url)
     res = urlfetch.fetch(url, 
                          payload = encoded_body,
-                         method = urlfetch.POST)
+                         method = urlfetch.POST,
+                         deadline = 10)
     return res
 
 def get_apikey():
